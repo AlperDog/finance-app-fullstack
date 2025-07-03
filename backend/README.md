@@ -1,15 +1,19 @@
-# Backend - Fastify API
+# Backend – Fastify API
 
-This is the backend service for the Personal Finance App, built with Fastify (Node.js).
+This is the backend service for the Personal Finance App, built with [Fastify](https://www.fastify.io/) (Node.js).
 
-## Features
+---
+
+## 🔥 Features
 
 - RESTful API for transactions, categories, budgets, and analytics
-- JWT authentication
+- JWT authentication for secure access
 - SQLite (default) or PostgreSQL support
-- Modular route and model structure
+- Modular, scalable code structure
 
-## Getting Started
+---
+
+## ⚙️ Getting Started
 
 ### Environment Variables
 
@@ -51,6 +55,14 @@ npm run dev
 curl -H "Authorization: Bearer <token>" http://localhost:3000/transactions
 ```
 
-## License
+---
+
+## 👤 Author
+
+Developed by [AlperDog](https://alperdog.github.io/portfolio/)
+
+---
+
+## 📄 License
 
 MIT

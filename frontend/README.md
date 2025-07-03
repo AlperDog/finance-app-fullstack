@@ -1,42 +1,46 @@
-# Frontend - React + Vite
+# Frontend – React + Vite
 
-This is the frontend for the Personal Finance App, built with React and Vite.
+This is the frontend for the Personal Finance App, built with [React](https://react.dev/) and [Vite](https://vitejs.dev/).
 
-## Features
+---
+
+## ✨ Features
 
 - Modern, responsive UI
 - JWT-based authentication
 - Dashboard with financial summary
 - Add/edit/delete transactions, categories, budgets
 - Interactive charts (Recharts)
+- Clean, maintainable codebase
 
-## Getting Started
+---
 
-Install dependencies:
+## 🚀 Getting Started
 
 ```sh
 npm install
-```
-
-Run the development server:
-
-```sh
 npm run dev
 ```
 
 The app will be available at [http://localhost:5173](http://localhost:5173)
 
-## Main Pages
+---
 
-- **Login/Register**: User authentication
-- **Dashboard**: Financial overview, transactions, categories, budgets, analytics
+## 🖥️ Main Pages
 
-## Customization
+- **Login/Register:** User authentication
+- **Dashboard:** Financial overview, transactions, categories, budgets, analytics
+
+---
+
+## 🎨 Customization
 
 - Update styles in `src/App.css` and `src/index.css`
 - Modify components in `src/pages/`
 
-## Libraries Used
+---
+
+## 📦 Libraries Used
 
 - React
 - React Router
@@ -44,6 +48,14 @@ The app will be available at [http://localhost:5173](http://localhost:5173)
 - jwt-decode
 - Vite
 
-## License
+---
+
+## 👤 Author
+
+Developed by [AlperDog](https://alperdog.github.io/portfolio/)
+
+---
+
+## 📄 License
 
 MIT

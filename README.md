@@ -1,16 +1,23 @@
 # Personal Finance Fullstack App
 
-A modern fullstack personal finance management application built with Fastify (Node.js) for the backend and React (Vite) for the frontend.
+A modern, fullstack personal finance management application built with **Fastify (Node.js)** for the backend and **React (Vite)** for the frontend.
 
-## Features
+> Developed by [AlperDog](https://alperdog.github.io/portfolio/)
+> See more projects: [github.com/AlperDog?tab=repositories](https://github.com/AlperDog?tab=repositories)
 
-- User authentication (JWT)
-- Income and expense tracking
+---
+
+## ✨ Features
+
+- Secure user authentication (JWT)
+- Track income and expenses
 - Category and budget management
-- Financial analytics and charts
-- Responsive dashboard
+- Financial analytics and interactive charts
+- Responsive, modern dashboard UI
 
-## Project Structure
+---
+
+## 📁 Project Structure
 
 ```
 yeni-proje/
@@ -18,7 +25,9 @@ yeni-proje/
   frontend/   # React + Vite frontend app
 ```
 
-## Getting Started
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -27,18 +36,14 @@ yeni-proje/
 
 ### Installation
 
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/your-username/your-repo.git
-   cd yeni-proje
-   ```
-2. Install dependencies:
-   ```sh
-   npm install
-   cd backend && npm install
-   cd ../frontend && npm install
-   cd ..
-   ```
+```sh
+git clone https://github.com/AlperDog/finance-app-fullstack.git
+cd yeni-proje
+npm install
+cd backend && npm install
+cd ../frontend && npm install
+cd ..
+```
 
 ### Running the App
 
@@ -48,19 +53,23 @@ Start both backend and frontend together:
 npm start
 ```
 
-Or use the batch script on Windows:
+Or on Windows:
 
 ```sh
 start-apps.bat
 ```
 
-- Frontend: http://localhost:5173
-- Backend: http://localhost:3000
+- Frontend: [http://localhost:5173](http://localhost:5173)
+- Backend: [http://localhost:3000](http://localhost:3000)
 
-## Contributing
+---
+
+## 🛠️ Contributing
 
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
-## License
+---
+
+## 📄 License
 
 MIT
