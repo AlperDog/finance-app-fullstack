@@ -38,7 +38,7 @@ yeni-proje/
 
 ```sh
 git clone https://github.com/AlperDog/finance-app-fullstack.git
-cd yeni-proje
+cd new-project
 npm install
 cd backend && npm install
 cd ../frontend && npm install
