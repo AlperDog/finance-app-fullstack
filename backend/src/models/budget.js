@@ -10,30 +10,19 @@ async function createBudgetTable() {
       table.integer("category_id"); // null ise genel bütçe
       table.float("amount").notNullable();
       table.string("period").notNullable(); // monthly, yearly, custom
-      table.date("start_date").notNullable();
-      table.date("end_date").notNullable();
       table.timestamps(true, true);
     });
   }
 }
 
-async function addBudget({
-  user_id,
-  category_id,
-  amount,
-  period,
-  start_date,
-  end_date,
-}) {
+async function addBudget({ user_id, category_id, amount, period }) {
   const [id] = await db("budgets").insert({
     user_id,
     category_id,
     amount,
     period,
-    start_date,
-    end_date,
   });
-  return { id, user_id, category_id, amount, period, start_date, end_date };
+  return { id, user_id, category_id, amount, period };
 }
 
 async function getBudgetsByUser(user_id) {

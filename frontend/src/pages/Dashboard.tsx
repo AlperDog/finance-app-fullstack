@@ -126,8 +126,8 @@ const Dashboard = () => {
     setFormError('');
     const token = localStorage.getItem('token');
     if (!token) return;
-    if (!form.amount || !form.date) {
-      setFormError('Tutar ve tarih zorunlu!');
+    if (!form.amount || !form.date || !form.category) {
+      setFormError('Tutar, tarih ve kategori zorunlu!');
       return;
     }
     try {
@@ -230,8 +230,8 @@ const Dashboard = () => {
     setBudgetError('');
     const token = localStorage.getItem('token');
     if (!token) return;
-    if (!budgetForm.amount || !budgetForm.start_date || !budgetForm.end_date) {
-      setBudgetError('Tutar ve tarih zorunlu!');
+    if (!budgetForm.amount) {
+      setBudgetError('Tutar zorunlu!');
       return;
     }
     try {
@@ -417,8 +417,8 @@ const Dashboard = () => {
     setBudgetError('');
     const token = localStorage.getItem('token');
     if (!token || !editBudgetId) return;
-    if (!budgetForm.amount || !budgetForm.start_date || !budgetForm.end_date) {
-      setBudgetError('Tutar ve tarih zorunlu!');
+    if (!budgetForm.amount) {
+      setBudgetError('Tutar zorunlu!');
       return;
     }
     try {
@@ -483,14 +483,12 @@ const Dashboard = () => {
           onChange={handleFormChange}
           style={{ width: 100, marginRight: 8 }}
         />
-        <input
-          type="text"
-          name="category"
-          placeholder="Kategori"
-          value={form.category}
-          onChange={handleFormChange}
-          style={{ width: 100, marginRight: 8 }}
-        />
+        <select name="category" value={form.category} onChange={handleFormChange} style={{ marginRight: 8 }}>
+          <option value="">Kategori Seç</option>
+          {categories.map(cat => (
+            <option key={cat.id} value={cat.name}>{cat.name} ({cat.type === 'income' ? 'Gelir' : 'Gider'})</option>
+          ))}
+        </select>
         <input
           type="text"
           name="description"
@@ -601,20 +599,6 @@ const Dashboard = () => {
           <option value="yearly">Yıllık</option>
           <option value="custom">Özel</option>
         </select>
-        <input
-          type="date"
-          name="start_date"
-          value={budgetForm.start_date}
-          onChange={handleBudgetFormChange}
-          style={{ marginRight: 8 }}
-        />
-        <input
-          type="date"
-          name="end_date"
-          value={budgetForm.end_date}
-          onChange={handleBudgetFormChange}
-          style={{ marginRight: 8 }}
-        />
         <button type="submit">{editBudgetId ? 'Güncelle' : 'Ekle'}</button>
         {editBudgetId && <button type="button" onClick={() => { setEditBudgetId(null); setBudgetForm({ category_id: '', amount: '', period: 'monthly', start_date: '', end_date: '' }); }}>Vazgeç</button>}
       </form>
@@ -625,8 +609,6 @@ const Dashboard = () => {
             <th>Kategori</th>
             <th>Tutar</th>
             <th>Dönem</th>
-            <th>Başlangıç</th>
-            <th>Bitiş</th>
             <th>İşlem</th>
           </tr>
         </thead>
@@ -636,8 +618,6 @@ const Dashboard = () => {
               <td>{b.category_id ? (categories.find(c => c.id === b.category_id)?.name || '-') : 'Genel'}</td>
               <td>{b.amount} ₺</td>
               <td>{b.period === 'monthly' ? 'Aylık' : b.period === 'yearly' ? 'Yıllık' : 'Özel'}</td>
-              <td>{b.start_date}</td>
-              <td>{b.end_date}</td>
               <td>
                 <button onClick={() => handleEditBudget(b)} style={{ marginRight: 4 }}>Düzenle</button>
                 <button onClick={() => handleDeleteBudget(b.id)} style={{ color: 'red' }}>Sil</button>

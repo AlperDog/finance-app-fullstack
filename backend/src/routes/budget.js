@@ -20,19 +20,15 @@ async function budgetRoutes(fastify, options) {
   // Ekle
   fastify.post("/", async (request, reply) => {
     const user_id = request.user.id;
-    const { category_id, amount, period, start_date, end_date } = request.body;
-    if (!amount || !period || !start_date || !end_date) {
-      return reply
-        .code(400)
-        .send({ error: "amount, period, start_date ve end_date zorunlu." });
+    const { category_id, amount, period } = request.body;
+    if (!amount || !period) {
+      return reply.code(400).send({ error: "amount ve period zorunlu." });
     }
     const budget = await addBudget({
       user_id,
       category_id,
       amount,
       period,
-      start_date,
-      end_date,
     });
     reply.send(budget);
   });

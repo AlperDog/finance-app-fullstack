@@ -11,7 +11,10 @@ const budgetRoutes = require("./routes/budget");
 const { createBudgetTable } = require("./models/budget");
 const analyticsRoutes = require("./routes/analytics");
 
-fastify.register(cors);
+fastify.register(cors, {
+  origin: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+});
 
 fastify.get("/", async (request, reply) => {
   return { status: "ok", message: "Kişisel Finans API çalışıyor!" };

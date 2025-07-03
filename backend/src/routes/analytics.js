@@ -95,3 +95,4 @@ async function analyticsRoutes(fastify, options) {
 }
 
 module.exports = analyticsRoutes;
+ 
